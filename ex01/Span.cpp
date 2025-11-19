@@ -20,7 +20,10 @@
 	void Span::addNumber(size_t nbr)
 	{
 		if (tab.size() < maxSize)
+		{
 			tab.push_back(nbr);
+			sort(tab.begin(), tab.end());
+		}
 		else
 			throw std::runtime_error("Nombre maximum d'integers atteints");
 	}
@@ -29,11 +32,12 @@
 	{
 		tab.resize(maxSize);
 		std::generate(tab.begin(), tab.end(), randomNumbers);
+		sort(tab.begin(), tab.end());
 	}
 
 	int randomNumbers()
 	{
-		return (std::rand() % 20);
+		return (std::rand() % 100);
 	}
 
 	int Span::shortestSpan()
@@ -82,4 +86,14 @@
 			i++;
 		}
 		return (spanMax);
+	}
+
+	void Span::printTab(void)
+	{
+		size_t i = 0;
+		while (i < tab.size())
+		{
+			std::cout << tab[i] << std::endl;
+			i++;
+		}
 	}

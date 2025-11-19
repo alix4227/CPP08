@@ -22,10 +22,11 @@ class Span
 	int shortestSpan();
 	int longuestSpan();
 	void	generateRandomNumbers();
-	std::vector<size_t>tab;
+	void printTab(void);
 
 	private:
 	size_t maxSize;
+	std::vector<size_t>tab;
 	
 };
 int		randomNumbers();
