@@ -7,6 +7,15 @@
 #include <list>
 #include <iostream>
 
+class noOccurenceFoundException: public std::exception
+{
+	public:
+	virtual const char* what() const throw()
+	{
+		return ("no occurence of nbr found");
+	}
+};
+
 template <typename T>
 typename T::iterator	easyfind(T& tab, int nbr)
 {
@@ -15,8 +24,11 @@ typename T::iterator	easyfind(T& tab, int nbr)
 		if (*it == nbr)
 			return (it);
 	}
+	throw(noOccurenceFoundException());
 	return (tab.end());
 }
+
+
 
 // bool	easyfind(const T& tab, int nbr)
 // {
