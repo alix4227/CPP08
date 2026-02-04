@@ -2,10 +2,10 @@
 	
 	Span::Span()
 	{
-
+	
 	}
 
-	Span::Span(Span& src)
+	Span::Span(Span const& src)
 	{
 		*this = src;
 	}
@@ -21,13 +21,13 @@
 
 	}
 
-	Span& Span::operator=(Span& src)
+	Span& Span::operator=(Span const& src)
 	{
 		this->tab = src.tab;
 		this->maxSize = src.maxSize;
 		return (*this);
 	}
-	
+
 	void Span::addNumber(size_t nbr)
 	{
 		if (tab.size() < maxSize)

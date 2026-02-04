@@ -18,10 +18,10 @@ class Span
 
 	public:
 	Span();
-	Span(Span& src);
+	Span(Span const& src);
 	Span(size_t N);
 	~Span();
-	Span& operator=(Span& src);
+	Span& operator=(Span const& src);
 	void	addNumber(size_t number);
 	int		shortestSpan();
 	int		longestSpan();
