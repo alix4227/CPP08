@@ -5,7 +5,11 @@
 
 	}
 
-	// Span(Span& src);
+	Span::Span(Span& src)
+	{
+		*this = src;
+	}
+
 	Span::Span(size_t N)
 	{
 		tab.reserve(N);
@@ -16,7 +20,14 @@
 	{
 
 	}
-	// Span& operator=(Span& src);
+
+	Span& Span::operator=(Span& src)
+	{
+		this->tab = src.tab;
+		this->maxSize = src.maxSize;
+		return (*this);
+	}
+	
 	void Span::addNumber(size_t nbr)
 	{
 		if (tab.size() < maxSize)
@@ -64,7 +75,7 @@
 		return (spanMin);
 	}
 
-	int Span::longuestSpan()
+	int Span::longestSpan()
 	{
 		if (tab.size() == 0 || tab.size() == 1)
 			throw std::runtime_error("Nombre insuffisant d'integers");
@@ -93,7 +104,8 @@
 		size_t i = 0;
 		while (i < tab.size())
 		{
-			std::cout << tab[i] << std::endl;
+			std::cout << tab[i] << " ";
 			i++;
 		}
+		std::cout << std::endl;
 	}

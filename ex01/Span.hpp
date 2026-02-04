@@ -12,22 +12,22 @@
 
 class Span
 {
-	public:
-	Span();
-	// Span(Span& src);
-	Span(size_t N);
-	~Span();
-	// Span& operator=(Span& src);
-	void	addNumber(size_t number);
-	int shortestSpan();
-	int longuestSpan();
-	void	generateRandomNumbers();
-	void printTab(void);
-
 	private:
 	size_t maxSize;
 	std::vector<size_t>tab;
+
+	public:
+	Span();
+	Span(Span& src);
+	Span(size_t N);
+	~Span();
+	Span& operator=(Span& src);
+	void	addNumber(size_t number);
+	int		shortestSpan();
+	int		longestSpan();
+	void	generateRandomNumbers();
+	void	printTab(void);
 	
 };
-int		randomNumbers();
+int			randomNumbers();
 #endif
